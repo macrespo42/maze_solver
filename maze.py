@@ -12,9 +12,9 @@ class Maze:
         num_cols: int,
         cell_size_x: int,
         cell_size_y: int,
-        win: Window,
+        win=None,
     ) -> None:
-        self.__cell = []
+        self._cells = []
         self.x1 = x1
         self.y1 = y1
         self.num_rows = num_rows
@@ -30,7 +30,7 @@ class Maze:
             col = []
             for j in range(self.num_rows):
                 col.append(Cell(self.win))
-            self.__cell.append(col)
+            self._cells.append(col)
         for i in range(self.num_cols):
             for j in range(self.num_rows):
                 self._draw_cell(i, j)
@@ -42,7 +42,7 @@ class Maze:
         y1 = self.y1 + j * self.cell_size_y
         x2 = x1 + self.cell_size_x
         y2 = y1 + self.cell_size_y
-        self.__cell[i][j].draw(x1, y1, x2, y2)
+        self._cells[i][j].draw(x1, y1, x2, y2)
         self._animate()
 
     def _animate(self) -> None:
