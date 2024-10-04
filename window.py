@@ -21,6 +21,7 @@ class Line:
 class Window:
     def __init__(self, width: int, height: int) -> None:
         self.__root = Tk()
+        self.__root.configure(bg="white")
         self.__root.title = "Maze solver"
         self.__canvas = Canvas(self.__root, height=height, width=width)
         self.__canvas.pack(fill=BOTH, expand=1)

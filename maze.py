@@ -90,10 +90,10 @@ class Maze:
             if direction[1] == j - 1:
                 self._cells[i][j].has_right_wall = False
                 self._cells[direction[0]][direction[1]].has_left_wall = False
-            if direction[1] == i + 1:
+            if direction[1] == i - 1:
                 self._cells[i][j].has_top_wall = False
                 self._cells[direction[0]][direction[1]].has_bot_wall = False
-            if direction[1] == i - 1:
+            if direction[1] == i + 1:
                 self._cells[i][j].has_bot_wall = False
                 self._cells[direction[0]][direction[1]].has_top_wall = False
             self._break_walls_r(direction[0], direction[1])
